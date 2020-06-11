@@ -27,7 +27,7 @@ function nextSequence() {
 }
 
 
-$(document).keypress(function (event) {
+$(document).on("keypress touchstart",function (event) {
     if (!started) {
         nextSequence();
         console.log(started);
@@ -35,7 +35,7 @@ $(document).keypress(function (event) {
     }
 });
 
-$('.btn').click(function () {
+$('.btn').on("click touch",function () {
     userChose = this.getAttribute('id');
     playSound(userChose);
     $('#' + userChose).fadeOut(100).fadeIn(100);
